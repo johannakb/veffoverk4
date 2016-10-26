@@ -8,7 +8,7 @@ gulp.task('lint-javascript', () => {
 
 });
 
-gulp.task('lint-scss', function() => {
+gulp.task('lint-scss', () => {
 	return gulp.src('/scss/**/*.scss')
 		.pipe(stylelint())
 		.pipe(stylelint.format())
@@ -16,7 +16,7 @@ gulp.task('lint-scss', function() => {
 
 });
 
-gulp.task('serve', function() => {
+gulp.task('serve', () => {
 	browserSync.init({
 		server: {
 			baseDir: './'
@@ -36,7 +36,7 @@ gulp.task('sass', function () {
 
 });
 
-gulp.task('babel', function() => {
+gulp.task('babel', () => {
 	gulp.src('./js/**/*.js')
 		//wtf
 

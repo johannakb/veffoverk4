@@ -1,6 +1,7 @@
 /* eslint-env node */
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
+const gulpStylelint = require('gulp-stylelint');
 
 gulp.task('lint-javascript', () => {
 		// ESLint ignores files with "node_modules" paths. 
@@ -20,11 +21,14 @@ gulp.task('lint-javascript', () => {
 });
 
 gulp.task('lint-scss', () => {
-	return gulp.src('/scss/**/*.scss')
-		.pipe(stylelint())
-		.pipe(stylelint.format())
-		.pipe(stylelint.failOnError());
-
+	return gulp
+    .src('src/**/*.scss')
+    .pipe(gulpStylelint({
+			failAfterError: true,
+      reporters: [
+        {formatter: 'string', console: true}
+      ]
+    }));
 });
 
 gulp.task('serve', () => {

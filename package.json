@@ -5,6 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "lint": "node_modules/gulp/bin/gulp.js lint-javascript",
+    "lint:scss": "node_modules/gulp/bin/gulp.js lint-scss",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,8 @@
   "homepage": "https://github.com/johannakb/veffoverk4#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-eslint": "^3.0.1"
+    "gulp-eslint": "^3.0.1",
+    "gulp-stylelint": "^3.4.0",
+    "stylelint-config-standard": "^14.0.0"
   }
 }

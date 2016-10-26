@@ -2,6 +2,7 @@
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const gulpStylelint = require('gulp-stylelint');
+const sass = require('gulp-sass');
 
 gulp.task('lint-javascript', () => {
 		// ESLint ignores files with "node_modules" paths. 
@@ -44,11 +45,9 @@ gulp.task('serve', () => {
 });
 
 gulp.task('sass', function () {
-	gulp.src('./scss/**/*.scss')
-    	.pipe(sass().on('error', sass.logError))
-    	.pipe(gulp.dest('./css'))
-    	.pipe(browserSync.stream());
-
+  return gulp.src("src/**/*.scss")
+        .pipe(sass())
+        .pipe(gulp.dest("dist"));
 });
 
 gulp.task('babel', () => {

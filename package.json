@@ -4,7 +4,8 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "lint": "node_modules/gulp/bin/gulp.js lint-javascript",
+    "lint": "npm run lint:javascript && npm run lint:scss",
+    "lint:javascript": "node_modules/gulp/bin/gulp.js lint-javascript",
     "lint:scss": "node_modules/gulp/bin/gulp.js lint-scss",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

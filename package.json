@@ -21,6 +21,7 @@
   "homepage": "https://github.com/johannakb/veffoverk4#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
     "gulp-eslint": "^3.0.1",
     "gulp-sass": "^2.3.2",
     "gulp-stylelint": "^3.4.0",

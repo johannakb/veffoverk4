@@ -1,76 +1,15 @@
-
 <!doctype html>
 <html lang="is">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verkefni 4</title>
+    <link rel="stylesheet" href="src/styles.scss">
   </head>
   <body>
-    <h1>Flug</h1>
-    <div class="data">Hleð gögnum...</div>
-    <script>
-
-    //hvaðan við viljum fa gognin
-    var url = 'http://apis.is/flight?language=en&type=departures';
-
-
-
-
-    document.addEventListener('DOMContentLoaded',function() {
-
-
-     // var container = document.querySelector('.data');
-
-
-      // Köllum a gogn ut i heimi
-      var beidni = new XMLHttpRequest();
-
-      beidni.open('GET', url, true);
-
-
-
-
-      beidni.onload = function(e) {
-
-
-        if (beidni.status >= 200 && beidni.status < 400) {
-          
-
-            var gogn = JSON.parse(beidni.response);
-
-            console.log(gogn);
-
-
-
-
-            var textiContainer = document.createElement('h1');
-            var texti = document.createTextNode('mjog kul texti');
-
-
-
-            document.body.appendChild(textiContainer);
-            textiContainer.appendChild(texti);
-       
-
-
-
-        } else {
-          container.textContent = beidni.status + ' villa!';
-        }
-      };
-
-
-
-
-
-
-
-      beidni.onerror = function(e) {
-        container.textContent = 'Villa í tengingu!';
-      };
-      beidni.send();
-    });
-    </script>
+    <h1>Flights</h1>
+    <button onclick="skipta()">Switch</button>
+    <div class="data">Loading...</div>
+    <script src="src/main.js"></script>
   </body>
 </html>
